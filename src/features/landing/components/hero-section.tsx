@@ -1,21 +1,24 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { SearchBar } from '../../../shared/public-api'
 import { CATEGORIES } from '../categories'
 import { LandingIcons } from '../icons'
 import image_008 from '../../../../assets/image_008.png'
 
 interface HeroSectionProps {
-  isSearchInNavbar: boolean
-  setIsSearchInNavbar: (isSearchInNavbar: boolean) => void
+  isSearchInNavbar?: boolean
+  setIsSearchInNavbar?: (isSearchInNavbar: boolean) => void
 }
 
 export function HeroSection({ isSearchInNavbar, setIsSearchInNavbar }: HeroSectionProps) {
   const triggerRef = useRef<HTMLDivElement>(null)
+  const [localIsSearchInNavbar, setLocalIsSearchInNavbar] = useState(false)
+  const effectiveIsSearchInNavbar = isSearchInNavbar ?? localIsSearchInNavbar
+  const setEffectiveIsSearchInNavbar = setIsSearchInNavbar ?? setLocalIsSearchInNavbar
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsSearchInNavbar(!entry.isIntersecting)
+        setEffectiveIsSearchInNavbar(!entry.isIntersecting)
       },
       { threshold: 0 },
     )
@@ -39,7 +42,7 @@ export function HeroSection({ isSearchInNavbar, setIsSearchInNavbar }: HeroSecti
           Trouve tout près de chez toi
         </h1>
 
-        <div className="mx-auto mt-6 max-w-3xl sm:mt-8" style={{ visibility: isSearchInNavbar ? 'hidden' : 'visible' }}>
+        <div className="mx-auto mt-6 max-w-3xl sm:mt-8" style={{ visibility: effectiveIsSearchInNavbar ? 'hidden' : 'visible' }}>
           <SearchBar />
         </div>
 
