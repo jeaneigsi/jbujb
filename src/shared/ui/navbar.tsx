@@ -14,24 +14,24 @@ export function Navbar(props: { children?: ReactNode }) {
 
   return (
     <header className="sticky top-0 z-20 bg-white/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/75">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <div className="flex items-center gap-2">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3">
+        <div className="flex items-center gap-2 flex-shrink-0">
           <img src="/assets/public-logo.png" alt="Logo" className="h-8 w-auto" />
         </div>
 
         {props.children ? (
-          <div className="flex-1 px-4 sm:px-20">
-            <div className="mx-auto max-w-md">{props.children}</div>
+          <div className="order-3 w-full sm:order-none sm:flex-1 sm:px-6">
+            <div className="mx-auto w-full max-w-2xl">{props.children}</div>
           </div>
         ) : null}
 
-        <nav className="flex items-center gap-3 text-sm">
+        <nav className="flex items-center gap-3 text-sm flex-shrink-0">
            <a
-            className="hidden rounded-full border border-gray-300 px-3 py-1.5 hover:bg-gray-50 sm:block"
-            href="#register"
-          >
-            + Inscrire une entreprise
-          </a>
+             className="hidden rounded-full border border-gray-300 px-3 py-1.5 hover:bg-gray-50 sm:block"
+             href="#register"
+           >
+             + Inscrire une entreprise
+           </a>
           
           <div className="relative">
             <button
