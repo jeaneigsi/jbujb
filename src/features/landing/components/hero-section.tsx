@@ -32,9 +32,9 @@ export function HeroSection({ isSearchInNavbar, setIsSearchInNavbar }: HeroSecti
   }, [])
 
   return (
-    <section className="relative z-0 overflow-hidden" style={{ backgroundColor: '#F75F16' }}>
+    <section className="relative z-0 overflow-hidden" style={{ backgroundColor: 'rgba(255, 109, 39, 0.97)' }}>
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-14 pb-24 sm:py-16 md:py-20 md:pb-40">
-        <h1 className="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl md:text-5xl">
+        <h1 className="text-center text-3xl font-extrabold text-white sm:text-4xl md:text-5xl">
           Trouve tout près de chez toi
         </h1>
 
@@ -43,7 +43,7 @@ export function HeroSection({ isSearchInNavbar, setIsSearchInNavbar }: HeroSecti
         </div>
 
         <div ref={triggerRef}>
-          <h2 className="mt-10 text-center text-xl font-bold text-gray-800 sm:mt-12">Catégories populaires</h2>
+          <h2 className="mt-10 text-center text-xl font-bold text-white sm:mt-12">Catégories populaires</h2>
           <div className="mx-auto mt-6 grid max-w-5xl grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
             {CATEGORIES.map((c) => (
               <button
