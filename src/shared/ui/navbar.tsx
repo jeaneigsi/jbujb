@@ -10,6 +10,7 @@ const LANGUAGES = [
 
 export function Navbar(props: { children?: ReactNode }) {
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false)
+  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false)
   const [selectedLang, setSelectedLang] = useState(LANGUAGES[0])
 
   return (
@@ -21,7 +22,30 @@ export function Navbar(props: { children?: ReactNode }) {
 
         {props.children ? (
           <div className="order-3 w-full sm:order-none sm:flex-1 sm:px-6">
-            <div className="mx-auto w-full max-w-2xl">{props.children}</div>
+            {/* Mobile: accordion toggle for the SearchBar */}
+            <div className="sm:hidden">
+              <button
+                type="button"
+                className="flex w-full items-center justify-between rounded-xl bg-white px-4 py-2 text-left text-sm font-medium text-gray-900 shadow ring-1 ring-gray-200"
+                aria-controls="navbar-mobile-search"
+                aria-expanded={isMobileSearchOpen}
+                onClick={() => setIsMobileSearchOpen((v) => !v)}
+              >
+                <span>Recherche</span>
+                <span className={`transition-transform ${isMobileSearchOpen ? 'rotate-180' : ''}`}>▾</span>
+              </button>
+              <div
+                id="navbar-mobile-search"
+                className={`grid transition-all duration-300 ${isMobileSearchOpen ? 'grid-rows-[1fr] opacity-100 mt-2' : 'grid-rows-[0fr] opacity-0'}`}
+                aria-hidden={!isMobileSearchOpen}
+              >
+                <div className="overflow-hidden">
+                  {props.children}
+                </div>
+              </div>
+            </div>
+            {/* Desktop: always visible */}
+            <div className="mx-auto hidden w-full max-w-2xl sm:block">{props.children}</div>
           </div>
         ) : null}
 

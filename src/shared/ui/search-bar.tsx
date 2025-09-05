@@ -8,7 +8,7 @@ function IconSearch() {
   )
 }
 
-export function SearchBar() {
+export function SearchBar(props: { variant?: 'default' | 'navbar' } = {}) {
   const cities = [
     'Casablanca',
     'Rabat',
@@ -22,21 +22,26 @@ export function SearchBar() {
     'Salé',
   ]
   const typedCity = useTypedPlaceholder(cities, { typeMs: 70, deleteMs: 35, holdMs: 900 })
+  const variant = props.variant ?? 'default'
+  const formBase =
+    'mx-auto flex w-full max-w-3xl flex-col items-stretch gap-2 overflow-visible rounded-2xl sm:flex-row sm:gap-0 sm:overflow-hidden sm:rounded-full sm:p-2'
+  const formClass =
+    variant === 'navbar'
+      ? `${formBase} bg-white shadow-lg ring-1 ring-gray-200`
+      : `${formBase} sm:bg-white sm:shadow-lg`
+
   return (
-    <form
-      action="#"
-      className="mx-auto flex w-full max-w-3xl flex-col items-stretch gap-2 overflow-visible rounded-2xl sm:flex-row sm:gap-0 sm:overflow-hidden sm:rounded-full sm:bg-white sm:p-2 sm:shadow-lg"
-    >
+    <form action="#" className={formClass}>
       <input
         aria-label="Recherche"
         placeholder="Que cherches‑tu ?"
-        className="min-w-0 flex-1 rounded-2xl border border-white/30 bg-white px-4 py-3 outline-none sm:rounded-full sm:border-0"
+        className="min-w-0 flex-1 rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 placeholder:text-gray-500 outline-none sm:rounded-full sm:border-0"
       />
-      <div className="flex items-center gap-2 rounded-2xl border border-white/30 bg-white px-3 py-2 text-gray-500 sm:rounded-none sm:border-0 sm:bg-transparent sm:px-3 sm:py-0">
+      <div className={variant === 'navbar' ? 'flex items-center gap-2 rounded-2xl border border-gray-200 bg-white px-3 py-2 text-gray-600' : 'flex items-center gap-2 rounded-2xl border border-white/30 bg-white px-3 py-2 text-gray-500 sm:rounded-none sm:border-0 sm:bg-transparent sm:px-3 sm:py-0'}>
         <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
           <path fill="currentColor" d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Zm0 9.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
         </svg>
-        <input aria-label="Ville" placeholder={typedCity || 'Ville'} className="w-28 rounded-full px-1 py-2 outline-none placeholder:text-gray-400" />
+        <input aria-label="Ville" placeholder={typedCity || 'Ville'} className="min-w-0 flex-1 rounded-full px-1 py-2 outline-none text-gray-900 placeholder:text-gray-500" />
       </div>
       <button
         type="submit"

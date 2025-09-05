@@ -11,7 +11,7 @@ export function LandingPage() {
 
   return (
     <div>
-      <Navbar>{isSearchInNavbar ? <SearchBar /> : null}</Navbar>
+      <Navbar>{isSearchInNavbar ? <SearchBar variant="navbar" /> : null}</Navbar>
       <HeroSection isSearchInNavbar={isSearchInNavbar} setIsSearchInNavbar={setIsSearchInNavbar} />
       <ServicesSection />
       <AboutSection />

@@ -14,6 +14,7 @@ export function HeroSection({ isSearchInNavbar, setIsSearchInNavbar }: HeroSecti
   const [localIsSearchInNavbar, setLocalIsSearchInNavbar] = useState(false)
   const effectiveIsSearchInNavbar = isSearchInNavbar ?? localIsSearchInNavbar
   const setEffectiveIsSearchInNavbar = setIsSearchInNavbar ?? setLocalIsSearchInNavbar
+  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,8 +43,35 @@ export function HeroSection({ isSearchInNavbar, setIsSearchInNavbar }: HeroSecti
           Trouve tout près de chez toi
         </h1>
 
-        <div className="mx-auto mt-6 max-w-3xl sm:mt-8" style={{ visibility: effectiveIsSearchInNavbar ? 'hidden' : 'visible' }}>
-          <SearchBar />
+        <div className="mx-auto mt-6 max-w-3xl sm:mt-8">
+          {/* Mobile: accordion toggle */}
+          {!effectiveIsSearchInNavbar ? (
+            <div className="sm:hidden">
+              <button
+                type="button"
+                className="flex w-full items-center justify-between rounded-xl bg-white/95 px-4 py-3 text-left text-sm font-medium text-gray-900 shadow"
+                aria-controls="hero-mobile-search"
+                aria-expanded={isMobileSearchOpen}
+                onClick={() => setIsMobileSearchOpen((v) => !v)}
+              >
+                <span>Recherche</span>
+                <span className={`transition-transform ${isMobileSearchOpen ? 'rotate-180' : ''}`}>▾</span>
+              </button>
+              <div
+                id="hero-mobile-search"
+                className={`grid transition-all duration-300 ${isMobileSearchOpen ? 'grid-rows-[1fr] opacity-100 mt-2' : 'grid-rows-[0fr] opacity-0'}`}
+                aria-hidden={!isMobileSearchOpen}
+              >
+                <div className="overflow-hidden">
+                  <SearchBar />
+                </div>
+              </div>
+            </div>
+          ) : null}
+          {/* Desktop: always visible when not moved to navbar */}
+          <div className="hidden sm:block" style={{ visibility: effectiveIsSearchInNavbar ? 'hidden' : 'visible' }}>
+            <SearchBar />
+          </div>
         </div>
 
         <div ref={triggerRef}>
