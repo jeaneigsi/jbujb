@@ -73,7 +73,7 @@ export function HeroSection({ isSearchInNavbar, setIsSearchInNavbar }: HeroSecti
         aria-hidden="true"
         loading="eager"
         decoding="async"
-        className="pointer-events-none select-none absolute bottom-[-4rem] right-[-6rem] hidden w-[26rem] opacity-95 sm:block sm:w-[32rem] md:bottom-[-6rem] md:right-[-8rem] md:w-[40rem] lg:w-[48rem]"
+        className="pointer-events-none select-none absolute bottom-[-4rem] right-[-6rem] hidden w-[26rem] opacity-95 blur-[1px] sm:block sm:w-[32rem] md:bottom-[-6rem] md:right-[-8rem] md:w-[40rem] lg:w-[48rem]"
       />
     </section>
   )
