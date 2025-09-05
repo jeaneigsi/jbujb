@@ -1,2 +1,2 @@
-export { LandingPage } from './components/landing-page'
+export { LandingPage } from './page/landing-page'
 export type { Category, CategoryKey } from './categories'

@@ -16,7 +16,7 @@ export function AboutSection() {
             <img
               src={image_010}
               alt="À propos de nous"
-              className="w-full rounded-lg object-cover shadow-lg"
+              className="w-full rounded-lg object-cover"
             />
           </div>
         </div>
