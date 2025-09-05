@@ -1,10 +1,6 @@
 import { Navbar } from '../../shared/public-api'
-
-type Cat = {
-  key: string
-  label: string
-  icon: JSX.Element
-}
+import { CATEGORIES } from './categories'
+import { LandingIcons } from './icons'
 
 function IconSearch() {
   return (
@@ -14,88 +10,17 @@ function IconSearch() {
   )
 }
 
-// Minimal inline SVGs inspired by common icon sets (W3Schools examples)
-const I = {
-  pharma: (
-    <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
-      <path fill="#22c55e" d="M11 2h2v8h8v2h-8v8h-2v-8H3v-2h8z" />
-    </svg>
-  ),
-  market: (
-    <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
-      <path fill="#f59e0b" d="M3 4h18l-2 7H5L3 4Zm3 9h12l-1 7H7l-1-7Z" />
-    </svg>
-  ),
-  food: (
-    <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
-      <path fill="#ef4444" d="M7 2h2v9H7V2Zm4 0h2v6c0 1.66-1.34 3-3 3h-1V2h2Zm6 0c1.66 0 3 1.34 3 3v8h-2v-4h-2v4h-2V5c0-1.66 1.34-3 3-3Z" />
-    </svg>
-  ),
-  spa: (
-    <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
-      <path fill="#06b6d4" d="M12 2c3 3 3 6 0 9-3-3-3-6 0-9Zm0 7c5 0 9 4 9 9H3c0-5 4-9 9-9Z" />
-    </svg>
-  ),
-  hair: (
-    <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
-      <path fill="#f59e0b" d="M4 4h2l6 6 6-6h2l-7 7 3 3-1 1-3-3-3 3-1-1 3-3L4 4Z" />
-    </svg>
-  ),
-  doctor: (
-    <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
-      <path fill="#22c55e" d="M11 14H8v3H6v-3H3v-2h3V9h2v3h3v2Zm1-12a6 6 0 1 1 0 12 6 6 0 0 1 0-12Z" />
-    </svg>
-  ),
-  dentist: (
-    <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
-      <path fill="#60a5fa" d="M7 2h10c2.2 0 4 1.8 4 4 0 3.9-2.1 6-4 6-1.2 0-2-.6-3-1.5-.6-.6-1.4-.6-2 0C11 11.4 10.2 12 9 12 7.1 12 5 9.9 5 6 5 3.8 5.8 2 7 2Z" />
-    </svg>
-  ),
-  plumber: (
-    <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
-      <path fill="#fbbf24" d="M4 3h6v4H8v3h3v3H8v8H6V13H3V10h3V7H4V3Zm10 0h6v4h-2v3h3v3h-3v8h-2V13h-3V10h3V7h-2V3Z" />
-    </svg>
-  ),
-  tire: (
-    <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" fill="#65a30d" />
-      <circle cx="12" cy="12" r="3" fill="#fff" />
-    </svg>
-  ),
-  accountant: (
-    <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
-      <rect x="3" y="5" width="18" height="14" rx="2" fill="#60a5fa" />
-      <path fill="#1e3a8a" d="M6 9h4v2H6V9Zm0 4h7v2H6v-2Z" />
-    </svg>
-  ),
-}
-
-const categories: Cat[] = [
-  { key: 'pharma', label: 'Pharmacies', icon: I.pharma },
-  { key: 'super', label: 'Supermarchés', icon: I.market },
-  { key: 'food', label: 'Restaurants', icon: I.food },
-  { key: 'spa', label: 'Esthéticiens', icon: I.spa },
-  { key: 'hair', label: 'Coiffeurs', icon: I.hair },
-  { key: 'doctor', label: 'Médecins', icon: I.doctor },
-  { key: 'dent', label: 'Dentistes', icon: I.dentist },
-  { key: 'plumb', label: 'Plombiers', icon: I.plumber },
-  { key: 'tire', label: 'Pneus', icon: I.tire },
-  { key: 'acct', label: 'Comptables', icon: I.accountant },
-]
-
 export function LandingPage() {
   return (
     <div className="min-h-screen">
       <Navbar />
 
-      {/* Hero */}
       <section className="relative z-0 overflow-hidden" style={{ backgroundColor: '#f5c318' }}>
         <div className="relative z-10 mx-auto max-w-6xl px-4 py-14 pb-24 sm:py-16 md:py-20 md:pb-40">
           <h1 className="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl md:text-5xl">
             Trouve tout près de chez toi
           </h1>
 
-          {/* Search */}
           <form
             action="#"
             className="mx-auto mt-6 flex max-w-3xl flex-col items-stretch gap-2 overflow-visible rounded-2xl sm:mt-8 sm:flex-row sm:gap-0 sm:overflow-hidden sm:rounded-full sm:bg-white sm:p-2 sm:shadow-lg"
@@ -121,16 +46,15 @@ export function LandingPage() {
             </button>
           </form>
 
-          {/* Categories */}
           <h2 className="mt-10 text-center text-xl font-bold text-gray-800 sm:mt-12">Catégories populaires</h2>
           <div className="mx-auto mt-6 grid max-w-5xl grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
-            {categories.map((c) => (
+            {CATEGORIES.map((c) => (
               <button
                 key={c.key}
                 type="button"
                 className="flex items-center gap-3 rounded-2xl border border-gray-200 bg-white px-4 py-3 text-left shadow-sm transition hover:shadow"
               >
-                <span className="grid h-9 w-9 place-items-center rounded-xl bg-gray-50">{c.icon}</span>
+                <span className="grid h-9 w-9 place-items-center rounded-xl bg-gray-50">{LandingIcons[c.iconKey]}</span>
                 <span className="text-sm font-medium text-gray-800">{c.label}</span>
               </button>
             ))}
@@ -143,20 +67,26 @@ export function LandingPage() {
           </div>
         </div>
 
-        {/* Side illustrations, placed behind content and responsive */}
         <img
-          src="/assets/fiorista.png"
+          src="/assets/image_004.png"
           alt=""
           role="presentation"
-          className="pointer-events-none absolute bottom-0 left-[-2rem] z-0 hidden select-none md:block"
-          style={{ height: '36rem', width: 'auto' }}
+          className="pointer-events-none absolute bottom-0 left-0 z-0 hidden select-none md:block"
+          style={{ height: '22rem' }}
+        />
+        <img
+          src="/assets/image_013.png"
+          alt=""
+          role="presentation"
+          className="pointer-events-none absolute bottom-4 right-6 z-0 hidden select-none md:block"
+          style={{ height: '18rem' }}
         />
       </section>
 
-      {/* Footer */}
       <footer className="border-t bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-gray-500">© {new Date().getFullYear()}  JBUJB — Tous droits réservés.</div>
+        <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-gray-500">© {new Date().getFullYear()} JBJB — Tous droits réservés.</div>
       </footer>
     </div>
   )
 }
+
