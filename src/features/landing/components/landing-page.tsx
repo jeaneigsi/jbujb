@@ -1,7 +1,28 @@
 import { useEffect, useRef, useState } from 'react'
+import image_001 from '../../../../assets/image_001.jpeg'
+import image_002 from '../../../../assets/image_002.jpeg'
+import image_003 from '../../../../assets/image_003.jpeg'
 import { Navbar, SearchBar } from '../../../shared/public-api'
 import { CATEGORIES } from '../categories'
 import { LandingIcons } from '../icons'
+
+const SERVICES = [
+  {
+    title: 'Expériences uniques',
+    description: 'Découvrez des activités locales et des lieux insolites.',
+    image: image_001,
+  },
+  {
+    title: 'Gastronomie locale',
+    description: 'Savourez les meilleurs plats et boissons de la région.',
+    image: image_002,
+  },
+  {
+    title: 'Culture et patrimoine',
+    description: 'Explorez les musées, monuments et traditions locales.',
+    image: image_003,
+  },
+]
 
 export function LandingPage() {
   const [isSearchInNavbar, setIsSearchInNavbar] = useState(false)
@@ -61,6 +82,23 @@ export function LandingPage() {
             <button className="rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium hover:bg-white/70">
               Voir toutes
             </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-6xl px-4">
+          <h2 className="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl md:text-5xl">Nos Services</h2>
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+            {SERVICES.map((service) => (
+              <div key={service.title} className="overflow-hidden rounded-lg bg-white shadow-md transition hover:shadow-xl">
+                <img src={service.image} alt={service.title} className="h-48 w-full object-cover" />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800">{service.title}</h3>
+                  <p className="mt-2 text-gray-600">{service.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
