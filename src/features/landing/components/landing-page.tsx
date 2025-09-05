@@ -69,8 +69,9 @@ export function LandingPage() {
       </section>
 
       <footer className="border-t bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-gray-500">© {new Date().getFullYear()} JBJB — Tous droits réservés.</div>
+        <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-gray-500">© {new Date().getFullYear()} — Tous droits réservés.</div>
       </footer>
     </div>
   )
 }
+
