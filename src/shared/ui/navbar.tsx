@@ -26,6 +26,13 @@ export function Navbar(props: { children?: ReactNode }) {
         ) : null}
 
         <nav className="flex items-center gap-3 text-sm">
+           <a
+            className="hidden rounded-full border border-gray-300 px-3 py-1.5 hover:bg-gray-50 sm:block"
+            href="#register"
+          >
+            + Inscrire une entreprise
+          </a>
+          
           <div className="relative">
             <button
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
@@ -52,12 +59,7 @@ export function Navbar(props: { children?: ReactNode }) {
               </div>
             )}
           </div>
-          <a
-            className="hidden rounded-full border border-gray-300 px-3 py-1.5 hover:bg-gray-50 sm:block"
-            href="#register"
-          >
-            + Inscrire une entreprise
-          </a>
+         
         </nav>
       </div>
     </header>

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { SearchBar } from '../../../shared/public-api'
 import { CATEGORIES } from '../categories'
 import { LandingIcons } from '../icons'
+import image_008 from '../../../../assets/image_008.png'
 
 interface HeroSectionProps {
   isSearchInNavbar: boolean
@@ -64,6 +65,16 @@ export function HeroSection({ isSearchInNavbar, setIsSearchInNavbar }: HeroSecti
           </button>
         </div>
       </div>
+
+      {/* Decorative hero image positioned to the right for visibility */}
+      <img
+        src={image_008}
+        alt=""
+        aria-hidden="true"
+        loading="eager"
+        decoding="async"
+        className="pointer-events-none select-none absolute bottom-[-4rem] right-[-6rem] hidden w-[26rem] opacity-95 sm:block sm:w-[32rem] md:bottom-[-6rem] md:right-[-8rem] md:w-[40rem] lg:w-[48rem]"
+      />
     </section>
   )
 }
