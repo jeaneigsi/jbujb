@@ -94,7 +94,7 @@ export function LandingPage() {
               <span className="text-sm font-bold text-white">JB</span>
             </div>
             <span className="text-lg font-semibold" style={{ color: brand }}>
-              JBJB
+              JBUJB
             </span>
           </div>
           <nav className="flex items-center gap-3 text-sm">
@@ -179,7 +179,7 @@ export function LandingPage() {
 
       {/* Footer */}
       <footer className="border-t bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-gray-500">© {new Date().getFullYear()} JBJB — Tous droits réservés.</div>
+        <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-gray-500">© {new Date().getFullYear()}  JBUJB — Tous droits réservés.</div>
       </footer>
     </div>
   )
