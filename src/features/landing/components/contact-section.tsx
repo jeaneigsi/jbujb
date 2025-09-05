@@ -3,7 +3,7 @@ export function ContactSection() {
     <section className="bg-gray-50 py-14 sm:py-16 md:py-20">
       <div className="mx-auto max-w-3xl px-4 text-center">
         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-          Profitez de réductions supplémentaires en commandant chez nous
+          Profitez de réductions supplémentaires en commandant sur notre plateforme
         </h2>
         <p className="mt-4 text-gray-600">Rejoignez-nous pour profiter de réductions et d'offres spéciales.</p>
         <form className="mx-auto mt-8 flex max-w-md flex-col sm:flex-row">
