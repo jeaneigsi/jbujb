@@ -91,9 +91,6 @@ export function LandingPage() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-2">
             <img src="/assets/public-logo.png" alt="JBUJB Logo" className="h-8 w-auto" />
-            <span className="text-lg font-semibold" style={{ color: brand }}>
-              JBUJB
-            </span>
           </div>
           <nav className="flex items-center gap-3 text-sm">
             <a className="rounded-full border border-gray-300 px-3 py-1.5 hover:bg-gray-50" href="#register">
@@ -163,15 +160,8 @@ export function LandingPage() {
           src="/assets/fiorista.png"
           alt=""
           role="presentation"
-          className="pointer-events-none absolute bottom-0 left-[-4rem] z-0 hidden select-none md:block"
-          style={{ height: '34rem', width: 'auto' }}
-        />
-        <img
-          src="/assets/image_013.png"
-          alt=""
-          role="presentation"
-          className="pointer-events-none absolute bottom-0 right-[-3rem] z-0 hidden select-none lg:block"
-          style={{ height: '32rem', width: 'auto' }}
+          className="pointer-events-none absolute bottom-0 left-[-2rem] z-0 hidden select-none md:block"
+          style={{ height: '36rem', width: 'auto' }}
         />
       </section>
 
