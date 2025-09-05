@@ -1,6 +1,6 @@
-import { Navbar } from '../../shared/public-api'
-import { CATEGORIES } from './categories'
-import { LandingIcons } from './icons'
+import { Navbar } from '../../../shared/public-api'
+import { CATEGORIES } from '../categories'
+import { LandingIcons } from '../icons'
 
 function IconSearch() {
   return (
@@ -66,21 +66,6 @@ export function LandingPage() {
             </button>
           </div>
         </div>
-
-        <img
-          src="/assets/image_004.png"
-          alt=""
-          role="presentation"
-          className="pointer-events-none absolute bottom-0 left-0 z-0 hidden select-none md:block"
-          style={{ height: '22rem' }}
-        />
-        <img
-          src="/assets/image_013.png"
-          alt=""
-          role="presentation"
-          className="pointer-events-none absolute bottom-4 right-6 z-0 hidden select-none md:block"
-          style={{ height: '18rem' }}
-        />
       </section>
 
       <footer className="border-t bg-white">
@@ -89,4 +74,3 @@ export function LandingPage() {
     </div>
   )
 }
-
