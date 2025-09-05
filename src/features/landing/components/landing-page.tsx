@@ -1,4 +1,5 @@
 import { Navbar } from '../../../shared/public-api'
+import { AboutSection } from './about-section'
 import { ContactSection } from './contact-section'
 import { Footer } from './footer'
 import { HeroSection } from './hero-section'
@@ -10,6 +11,7 @@ export function LandingPage() {
       <Navbar />
       <HeroSection />
       <ServicesSection />
+      <AboutSection />
       <ContactSection />
       <Footer />
     </div>
