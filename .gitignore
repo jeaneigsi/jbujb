@@ -1,0 +1,49 @@
+# Node & package managers
+node_modules/
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+storybook-static/
+
+# Test & coverage artifacts
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+cypress/videos/
+cypress/screenshots/
+
+# Caches
+.cache/
+.vite/
+.parcel-cache/
+.eslintcache
+.turbo/
+.rspack-cache/
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment files (keep examples versioned)
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+
