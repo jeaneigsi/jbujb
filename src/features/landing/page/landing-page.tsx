@@ -1,4 +1,5 @@
-import { Navbar } from '../../../shared/public-api'
+import { useState } from 'react'
+import { Navbar, SearchBar } from '../../../shared/public-api'
 import { AboutSection } from '../components/about-section'
 import { ContactSection } from '../components/contact-section'
 import { Footer } from '../components/footer'
@@ -6,10 +7,12 @@ import { HeroSection } from '../components/hero-section'
 import { ServicesSection } from '../components/services-section'
 
 export function LandingPage() {
+  const [isSearchInNavbar, setIsSearchInNavbar] = useState(false)
+
   return (
     <div>
-      <Navbar />
-      <HeroSection />
+      <Navbar>{isSearchInNavbar ? <SearchBar /> : null}</Navbar>
+      <HeroSection isSearchInNavbar={isSearchInNavbar} setIsSearchInNavbar={setIsSearchInNavbar} />
       <ServicesSection />
       <AboutSection />
       <ContactSection />

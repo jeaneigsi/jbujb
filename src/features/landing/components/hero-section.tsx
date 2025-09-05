@@ -1,10 +1,14 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { SearchBar } from '../../../shared/public-api'
 import { CATEGORIES } from '../categories'
 import { LandingIcons } from '../icons'
 
-export function HeroSection() {
-  const [isSearchInNavbar, setIsSearchInNavbar] = useState(false)
+interface HeroSectionProps {
+  isSearchInNavbar: boolean
+  setIsSearchInNavbar: (isSearchInNavbar: boolean) => void
+}
+
+export function HeroSection({ isSearchInNavbar, setIsSearchInNavbar }: HeroSectionProps) {
   const triggerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -28,7 +32,7 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="relative z-0 overflow-hidden" style={{ backgroundColor: '#f5c318' }}>
+    <section className="relative z-0 overflow-hidden" style={{ backgroundColor: '#F75F16' }}>
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-14 pb-24 sm:py-16 md:py-20 md:pb-40">
         <h1 className="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl md:text-5xl">
           Trouve tout près de chez toi
