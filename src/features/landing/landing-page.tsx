@@ -90,9 +90,7 @@ export function LandingPage() {
       <header className="sticky top-0 z-20 bg-white/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/75">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full" style={{ backgroundColor: brand }}>
-              <span className="text-sm font-bold text-white">JB</span>
-            </div>
+            <img src="/assets/public-logo.png" alt="JBUJB Logo" className="h-8 w-auto" />
             <span className="text-lg font-semibold" style={{ color: brand }}>
               JBUJB
             </span>
@@ -162,18 +160,18 @@ export function LandingPage() {
 
         {/* Side illustrations, placed behind content and responsive */}
         <img
-          src="/assets/image_004.png"
+          src="/assets/fiorista.png"
           alt=""
           role="presentation"
-          className="pointer-events-none absolute bottom-0 left-0 z-0 hidden select-none md:block"
-          style={{ height: '22rem' }}
+          className="pointer-events-none absolute bottom-0 left-[-4rem] z-0 hidden select-none md:block"
+          style={{ height: '34rem', width: 'auto' }}
         />
         <img
           src="/assets/image_013.png"
           alt=""
           role="presentation"
-          className="pointer-events-none absolute bottom-4 right-6 z-0 hidden select-none md:block"
-          style={{ height: '18rem' }}
+          className="pointer-events-none absolute bottom-0 right-[-3rem] z-0 hidden select-none lg:block"
+          style={{ height: '32rem', width: 'auto' }}
         />
       </section>
 
@@ -184,4 +182,3 @@ export function LandingPage() {
     </div>
   )
 }
-
