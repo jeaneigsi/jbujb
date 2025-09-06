@@ -1,7 +1,7 @@
 import { ReactNode, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from '@tanstack/react-router'
-
+import logoUrl from '@/assets/public-logo.png'
 const LANGUAGES = [
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
   { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -18,7 +18,7 @@ export function Navbar(props: { children?: ReactNode }) {
     <header className="sticky top-0 z-20 bg-white/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/75">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3 sm:flex-nowrap">
         <div className="flex items-center gap-2 flex-shrink-0">
-          <img src="/assets/public-logo.png" alt="Logo" className="h-8 w-auto" />
+          <img src={logoUrl} alt="Logo" className="h-8 w-auto" />
         </div>
 
         {props.children ? (
