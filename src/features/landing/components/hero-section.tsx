@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { SearchBar } from '../../../shared/public-api'
 import { CATEGORIES } from '../constants/CATEGORIES'
@@ -41,9 +41,7 @@ export function HeroSection({ isSearchInNavbar, setIsSearchInNavbar }: HeroSecti
   return (
     <section className="relative z-0 overflow-hidden" style={{ backgroundColor: 'rgba(255, 109, 39, 0.97)' }}>
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-14 pb-24 sm:py-16 md:py-20 md:pb-40">
-        <h1 className="text-center text-3xl font-extrabold text-white sm:text-4xl md:text-5xl">
-          {t('hero.title')}
-        </h1>
+        <h1 className="text-center text-3xl font-extrabold text-white sm:text-4xl md:text-5xl">{t('hero.title')}</h1>
 
         <div className="mx-auto mt-6 max-w-3xl sm:mt-8">
           {/* Mobile: accordion toggle */}
@@ -57,7 +55,18 @@ export function HeroSection({ isSearchInNavbar, setIsSearchInNavbar }: HeroSecti
                 onClick={() => setIsMobileSearchOpen((v) => !v)}
               >
                 <span>{t('common:nav.search')}</span>
-                <span className={`transition-transform ${isMobileSearchOpen ? 'rotate-180' : ''}`}>â–¾</span>
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className={`h-4 w-4 transition-transform ${isMobileSearchOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
               </button>
               <div
                 id="hero-mobile-search"
@@ -111,6 +120,4 @@ export function HeroSection({ isSearchInNavbar, setIsSearchInNavbar }: HeroSecti
     </section>
   )
 }
-
-
 

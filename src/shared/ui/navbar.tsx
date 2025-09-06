@@ -34,7 +34,18 @@ export function Navbar(props: { children?: ReactNode }) {
                 onClick={() => setIsMobileSearchOpen((v) => !v)}
               >
                 <span>{t('nav.search')}</span>
-                <span className={`transition-transform ${isMobileSearchOpen ? 'rotate-180' : ''}`}>▾</span>
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className={`h-4 w-4 transition-transform ${isMobileSearchOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
               </button>
               <div
                 id="navbar-mobile-search"
@@ -100,4 +111,3 @@ export function Navbar(props: { children?: ReactNode }) {
     </header>
   )
 }
-
