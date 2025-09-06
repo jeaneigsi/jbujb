@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { lazy } from 'react'
+import { createFileRoute, redirect } from '@tanstack/react-router'
 
-const LandingPage = lazy(() =>
-  import('../features/landing/public-api').then((m) => ({ default: m.LandingPage })),
-)
-
-export const Route = createFileRoute('/')({ component: () => <LandingPage /> })
+export const Route = createFileRoute('/')({
+  loader: () => {
+    throw redirect({ to: '/$locale', params: { locale: 'fr' } })
+  },
+})

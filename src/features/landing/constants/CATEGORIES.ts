@@ -1,4 +1,4 @@
-import type { Category } from '../types/Category'
+﻿import type { Category } from '../types/Category'
 
 export const CATEGORIES: Category[] = [
   { key: 'pharma', label: 'Pharmacies', iconKey: 'pharma' },
@@ -12,4 +12,3 @@ export const CATEGORIES: Category[] = [
   { key: 'tire', label: 'Pneus', iconKey: 'tire' },
   { key: 'acct', label: 'Comptables', iconKey: 'acct' },
 ]
-

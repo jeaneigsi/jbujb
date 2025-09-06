@@ -1,17 +1,18 @@
 import { ReactNode, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useNavigate } from '@tanstack/react-router'
 
 const LANGUAGES = [
-  { code: 'en', name: 'English', flag: '🇬🇧' },
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'ar', name: 'العربية', flag: '🇲🇦' },
-  { code: 'zh', name: '中文', flag: '🇨🇳' },
-  { code: 'ja', name: '日本語', flag: '🇯🇵' },
+  { code: 'en', name: 'English', flag: '🇬🇧' },
 ]
 
 export function Navbar(props: { children?: ReactNode }) {
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false)
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false)
-  const [selectedLang, setSelectedLang] = useState(LANGUAGES[0])
+  const { t, i18n } = useTranslation('common')
+  const navigate = useNavigate()
+  const currentLang = LANGUAGES.find((l) => l.code === i18n.language) ?? LANGUAGES[0]
 
   return (
     <header className="sticky top-0 z-20 bg-white/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/75">
@@ -31,7 +32,7 @@ export function Navbar(props: { children?: ReactNode }) {
                 aria-expanded={isMobileSearchOpen}
                 onClick={() => setIsMobileSearchOpen((v) => !v)}
               >
-                <span>Recherche</span>
+                <span>{t('nav.search')}</span>
                 <span className={`transition-transform ${isMobileSearchOpen ? 'rotate-180' : ''}`}>▾</span>
               </button>
               <div
@@ -64,7 +65,7 @@ export function Navbar(props: { children?: ReactNode }) {
             >
               <path d="M10 4v12M4 10h12" />
             </svg>
-            <span>s'inscrire</span>
+            <span>{t('nav.register')}</span>
           </a>
 
           <div className="relative">
@@ -72,8 +73,8 @@ export function Navbar(props: { children?: ReactNode }) {
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
               className="inline-flex items-center gap-2 rounded-md border border-gray-400/80 px-3 py-2 text-gray-800 bg-white/90 ring-1 ring-inset ring-gray-900/10 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/30"
             >
-              <span>{selectedLang.flag}</span>
-              <span className="hidden sm:inline">{selectedLang.name}</span>
+              <span>{currentLang.flag}</span>
+              <span className="hidden sm:inline">{currentLang.name}</span>
             </button>
             {isLangMenuOpen && (
               <div className="absolute right-0 mt-2 w-40 rounded-md bg-white shadow-lg ring-1 ring-gray-900/10">
@@ -81,8 +82,8 @@ export function Navbar(props: { children?: ReactNode }) {
                   <button
                     key={lang.code}
                     onClick={() => {
-                      setSelectedLang(lang)
                       setIsLangMenuOpen(false)
+                      navigate({ to: '/$locale', params: { locale: lang.code as 'fr' | 'en' } })
                     }}
                     className="flex w-full items-center gap-2 px-4 py-2 text-left hover:bg-gray-100"
                   >
