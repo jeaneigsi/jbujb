@@ -1,7 +1,8 @@
 import { ReactNode, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from '@tanstack/react-router'
-import logoUrl from '@/assets/public-logo.png'
+import logoUrl from '../../../assets/public-logo.png'
+
 const LANGUAGES = [
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
   { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -99,3 +100,4 @@ export function Navbar(props: { children?: ReactNode }) {
     </header>
   )
 }
+
