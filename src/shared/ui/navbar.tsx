@@ -1,11 +1,11 @@
 import { ReactNode, useState } from 'react'
 
 const LANGUAGES = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'fr', name: 'French', flag: '🇫🇷' },
+  { code: 'en', name: 'English', flag: '🇬🇧' },
+  { code: 'fr', name: 'Français', flag: '🇫🇷' },
   { code: 'ar', name: 'العربية', flag: '🇲🇦' },
-  { code: 'zh', name: 'Chinese', flag: '🇨🇳' },
-  { code: 'ja', name: 'Japanese', flag: '🇯🇵' },
+  { code: 'zh', name: '中文', flag: '🇨🇳' },
+  { code: 'ja', name: '日本語', flag: '🇯🇵' },
 ]
 
 export function Navbar(props: { children?: ReactNode }) {
@@ -39,9 +39,7 @@ export function Navbar(props: { children?: ReactNode }) {
                 className={`grid transition-all duration-300 ${isMobileSearchOpen ? 'grid-rows-[1fr] opacity-100 mt-2' : 'grid-rows-[0fr] opacity-0'}`}
                 aria-hidden={!isMobileSearchOpen}
               >
-                <div className="overflow-hidden">
-                  {props.children}
-                </div>
+                <div className="overflow-hidden">{props.children}</div>
               </div>
             </div>
             {/* Desktop: always visible */}
@@ -50,13 +48,13 @@ export function Navbar(props: { children?: ReactNode }) {
         ) : null}
 
         <nav className="flex items-center gap-3 text-sm flex-shrink-0">
-           <a
-             className="hidden rounded-full border border-gray-300 px-3 py-1.5 hover:bg-gray-50 sm:block"
-             href="#register"
-           >
-             + Inscrire une entreprise
-           </a>
-          
+          <a
+            className="hidden rounded-full border border-gray-300 px-3 py-1.5 hover:bg-gray-50 sm:block"
+            href="#register"
+          >
+            + Inscrire une entreprise
+          </a>
+
           <div className="relative">
             <button
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
@@ -83,9 +81,9 @@ export function Navbar(props: { children?: ReactNode }) {
               </div>
             )}
           </div>
-         
         </nav>
       </div>
     </header>
   )
 }
+

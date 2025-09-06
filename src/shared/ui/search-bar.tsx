@@ -34,10 +34,14 @@ export function SearchBar(props: { variant?: 'default' | 'navbar' } = {}) {
     <form action="#" className={formClass}>
       <input
         aria-label="Recherche"
-        placeholder="Que cherches‑tu ?"
+        placeholder="Que cherches-tu ?"
         className="min-w-0 flex-1 rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 placeholder:text-gray-500 outline-none sm:rounded-full sm:border-0"
       />
-      <div className={variant === 'navbar' ? 'flex items-center gap-2 rounded-2xl border border-gray-200 bg-white px-3 py-2 text-gray-600' : 'flex items-center gap-2 rounded-2xl border border-white/30 bg-white px-3 py-2 text-gray-500 sm:rounded-none sm:border-0 sm:bg-transparent sm:px-3 sm:py-0'}>
+      <div className={
+        variant === 'navbar'
+          ? 'flex items-center gap-2 rounded-2xl border border-gray-200 bg-white px-3 py-2 text-gray-600'
+          : 'flex items-center gap-2 rounded-2xl border border-white/30 bg-white px-3 py-2 text-gray-500 sm:rounded-none sm:border-0 sm:bg-transparent sm:px-3 sm:py-0'
+      }>
         <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
           <path fill="currentColor" d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Zm0 9.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
         </svg>
@@ -103,3 +107,4 @@ function useTypedPlaceholder(items: string[], opts?: { typeMs?: number; deleteMs
 
   return text
 }
+

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { SearchBar } from '../../../shared/public-api'
-import { CATEGORIES } from '../categories'
+import { CATEGORIES } from '../constants/CATEGORIES'
 import { LandingIcons } from '../icons'
 import image_008 from '../../../../assets/image_008.png'
 

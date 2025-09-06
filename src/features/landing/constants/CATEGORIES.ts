@@ -1,20 +1,4 @@
-export type CategoryKey =
-  | 'pharma'
-  | 'super'
-  | 'food'
-  | 'spa'
-  | 'hair'
-  | 'doctor'
-  | 'dent'
-  | 'plumb'
-  | 'tire'
-  | 'acct'
-
-export type Category = {
-  key: CategoryKey
-  label: string
-  iconKey: CategoryKey
-}
+import type { Category } from '../types/Category'
 
 export const CATEGORIES: Category[] = [
   { key: 'pharma', label: 'Pharmacies', iconKey: 'pharma' },

@@ -29,22 +29,27 @@ Niveau par défaut: high pour conception/refactor, medium pour corrections local
 - shared/ contient UNIQUEMENT le design system réutilisable, tokens, utilitaires transverses validés, et son public-api.ts.
 <tree>
 src/
-app/                # bootstrap, providers, routes, error boundaries
-shared/
-ui/               # DS: atoms/molecules/organisms
-styles/           # tokens, reset
-lib/
-public-api.ts
-features/
-users/
-api/
-services/
-hooks/
-components/
-types.ts
-constants.ts
-public-api.ts
-[README.md](http://readme.md/)
+  app/                      # bootstrap, routes, providers, error 
+  routes/                   # routes 
+  shared/                   # DS + utils approuvés
+    ui/                     # atoms/molecules/organisms (DS)
+    styles/                 # tokens, reset (SMACSS categories)
+    lib/
+    public-api.ts
+  features/
+    categories/
+      api/             # Appels API liés aux catégories
+      services/        # Logique métier : mapping, filtres
+      hooks/           # useCategories(), useCategorySearch()
+      components/      # UI atomique (CategoryCard, CategoryListItem)
+      pages/           # Pages entières (CategoryListPage, CategoryDetailPage)
+      icons/           # Icônes SVG/React spécifiques à la feature
+      types/           # Types et enums dédiés (Category.ts, CategoryKey.ts)
+      constants/       # Constantes métiers (CATEGORIES.ts)
+      public-api.ts    # Point d’entrée de la feature
+      README.md        # Documentation locale
+
+
 </tree>
 </project_structure>
 

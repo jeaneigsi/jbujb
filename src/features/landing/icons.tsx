@@ -1,4 +1,4 @@
-import type { CategoryKey } from './categories'
+import type { CategoryKey } from './types/Category'
 
 export const LandingIcons: Record<CategoryKey, JSX.Element> = {
   pharma: (
@@ -54,4 +54,3 @@ export const LandingIcons: Record<CategoryKey, JSX.Element> = {
     </svg>
   ),
 }
-
