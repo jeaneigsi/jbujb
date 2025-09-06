@@ -49,10 +49,22 @@ export function Navbar(props: { children?: ReactNode }) {
 
         <nav className="flex items-center gap-3 text-sm flex-shrink-0">
           <a
-            className="hidden rounded-full border border-gray-300 px-3 py-1.5 hover:bg-gray-50 sm:block"
             href="#register"
+            className="hidden sm:inline-flex items-center gap-2 rounded-none bg-gray-900 px-3 py-2 text-white transition-colors hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/50"
           >
-            + Inscrire une entreprise
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 20 20"
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M10 4v12M4 10h12" />
+            </svg>
+            <span>s'inscrire</span>
           </a>
 
           <div className="relative">
@@ -86,4 +98,3 @@ export function Navbar(props: { children?: ReactNode }) {
     </header>
   )
 }
-

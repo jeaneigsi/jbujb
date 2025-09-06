@@ -1,6 +1,7 @@
 import type { CategoryKey } from './types/Category'
+import type { ReactElement } from 'react'
 
-export const LandingIcons: Record<CategoryKey, JSX.Element> = {
+export const LandingIcons: Record<CategoryKey, ReactElement> = {
   pharma: (
     <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
       <path fill="#22c55e" d="M11 2h2v8h8v2h-8v8h-2v-8H3v-2h8z" />
