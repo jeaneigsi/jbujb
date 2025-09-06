@@ -15,7 +15,7 @@ export function Navbar(props: { children?: ReactNode }) {
 
   return (
     <header className="sticky top-0 z-20 bg-white/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/75">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3 sm:flex-nowrap">
         <div className="flex items-center gap-2 flex-shrink-0">
           <img src="/assets/public-logo.png" alt="Logo" className="h-8 w-auto" />
         </div>
@@ -50,7 +50,7 @@ export function Navbar(props: { children?: ReactNode }) {
         <nav className="flex items-center gap-3 text-sm flex-shrink-0">
           <a
             href="#register"
-            className="hidden sm:inline-flex items-center gap-2 rounded-none bg-gray-900 px-3 py-2 text-white transition-colors hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/50"
+            className="hidden sm:inline-flex items-center gap-2 rounded-md bg-gray-900 px-3 py-2 text-white transition-colors hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/50"
           >
             <svg
               aria-hidden="true"
@@ -70,13 +70,13 @@ export function Navbar(props: { children?: ReactNode }) {
           <div className="relative">
             <button
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-              className="flex items-center gap-2 rounded-md border border-gray-300 px-3 py-1.5 hover:bg-gray-50"
+              className="inline-flex items-center gap-2 rounded-md border border-gray-400/80 px-3 py-2 text-gray-800 bg-white/90 ring-1 ring-inset ring-gray-900/10 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/30"
             >
               <span>{selectedLang.flag}</span>
               <span className="hidden sm:inline">{selectedLang.name}</span>
             </button>
             {isLangMenuOpen && (
-              <div className="absolute right-0 mt-2 w-40 rounded-md bg-white shadow-lg">
+              <div className="absolute right-0 mt-2 w-40 rounded-md bg-white shadow-lg ring-1 ring-gray-900/10">
                 {LANGUAGES.map((lang) => (
                   <button
                     key={lang.code}
