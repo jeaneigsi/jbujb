@@ -36,7 +36,7 @@ cypress/screenshots/
 .env.*
 !.env.example
 !.env.*.example
-
+.md
 # OS & Editor
 .DS_Store
 Thumbs.db
