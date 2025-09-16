@@ -95,11 +95,7 @@ Recommended next steps for stronger production posture:
 - Security: follow `frontend/guideline/security.md`. No secrets in client, set strict CSP and headers at the edge.
 
 ## References
-- High‑level defaults: `AGENTS.md` (root)
 - System guidelines: `frontend/guideline/system.md`
 - Security baseline: `frontend/guideline/security.md`
 - Scalability/TanStack usage: `frontend/guideline/scalability.md`
-
----
-Assumptions: This frontend currently ships as a static SPA (if wee need ot move for fullstack application , we can discuss on the topic). If you need SEO‑critical pages or server functions, we’ll enable SSR/streaming with TanStack Start.
 
